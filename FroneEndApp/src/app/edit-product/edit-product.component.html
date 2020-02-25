@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Modifier un Produit
+    </div>
+    <div class="panel-heading" *ngIf="currentProduct">
+      <form  #f="ngForm" (ngSubmit)="onUpdateProduct(f.value)" *ngIf="cpt==1">
+        <div class="form-group">
+          <label class="control-label">designation</label>
+          <input class="form-control" type="text" name="designation" ngModel [(ngModel)]="currentProduct.designation">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">prix</label>
+          <input class="form-control" type="text" name="prix" ngModel [(ngModel)]="currentProduct.prix">
+        </div>
+        <div class="form-group">
+          <label class="control-label">quantite</label>
+          <input class="form-control" type="text" name="quantite" ngModel [(ngModel)]="currentProduct.quantite">
+        </div>
+
+        <button class="btn btn-success" type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
